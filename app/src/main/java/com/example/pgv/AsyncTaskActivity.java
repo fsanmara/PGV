@@ -40,7 +40,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
         protected Boolean doInBackground(String... strings) {
 
             publishProgress(strings);
-            //en la tara 2 aquí se pasa la vocal
+            //en la tarea 2 aquí se pasa la vocal
 
             return true;
         }
