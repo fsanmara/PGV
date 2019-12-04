@@ -24,9 +24,9 @@ public class AsyncTaskActivity extends AppCompatActivity {
         MiTareaAsincrona miTarea1 = new MiTareaAsincrona();
         miTarea1.execute("1");
         MiTareaAsincrona miTarea2 = new MiTareaAsincrona();
-        miTarea1.execute("2");
+        miTarea2.execute("2");
         MiTareaAsincrona miTarea3 = new MiTareaAsincrona();
-        miTarea1.execute("3");
+        miTarea3.execute("3");
 
         tvMensajeAsyncTask = findViewById(R.id.tvMensajeAsyncTask);
         tvMensajeAsyncTask.setText(monitor.getMensaje());
