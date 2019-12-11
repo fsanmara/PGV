@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".IntentServiceActivity">
+
+    <TextView
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:text="IntentService"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="Aleatorio entre 1 y "
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etN"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textAlignment="center"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGenerarAleatorio"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Generar aleatorio"
+        android:textAlignment="center"/>
+</LinearLayout>
