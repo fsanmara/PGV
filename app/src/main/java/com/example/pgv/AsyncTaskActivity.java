@@ -21,6 +21,8 @@ public class AsyncTaskActivity extends AppCompatActivity {
 
         monitor = new Monitor();
 
+        tvMensajeAsyncTask = findViewById(R.id.tvMensajeAsyncTask);
+
         MiTareaAsincrona miTarea1 = new MiTareaAsincrona();
         miTarea1.execute("1");
         MiTareaAsincrona miTarea2 = new MiTareaAsincrona();
@@ -28,35 +30,52 @@ public class AsyncTaskActivity extends AppCompatActivity {
         MiTareaAsincrona miTarea3 = new MiTareaAsincrona();
         miTarea3.execute("3");
 
-        tvMensajeAsyncTask = findViewById(R.id.tvMensajeAsyncTask);
-        tvMensajeAsyncTask.setText(monitor.getMensaje());
+
+        //tvMensajeAsyncTask.setText(monitor.getMensaje());
 
     }
 //los parámetros son: los datos que le voy a pasar,lo que voy a procesar, el resultado final
 
     private class MiTareaAsincrona extends AsyncTask<String, String, Boolean>{
 
+        //string, character, void
+        //
+
         @Override
         protected Boolean doInBackground(String... strings) {
 
-            publishProgress(strings);
+            publishProgress(strings[0]);
             //en la tarea 2 aquí se pasa la vocal
+            //publishProgress(string[0], strings[1])
+            //poner for
 
             return true;
         }
+
+
 
         @Override
         protected void onProgressUpdate(String... values) {
             //en la tarea 2 aquí se cuenta las vocales
             try {
                 Thread.sleep(1000);
-                monitor.append("Soy el hilo" + values);
+                monitor.append("Soy la tarea " + values[0]);
+
+                //aquí se cuenta la vocal
+                //quitar el append
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
+        //onPostExecute es como el OnUIThread
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+
+            tvMensajeAsyncTask.setText(monitor.getMensaje());
+
+        }
 
     }
 

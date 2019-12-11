@@ -25,6 +25,9 @@ public class ThreadMonitorActivity extends AppCompatActivity {
         MiHilo h3 = new MiHilo("3");
         h3.start();
 
+        //join espera a que si un hilo accede a una variable, hasta que no termine
+        //de acceder a esa variable, otro hilo no puede acceder a esa variable
+        //Y no sigue leyendo el código hasta que terminan de ejecutarse todos los hilos
         try {
             h1.join();
             h2.join();
